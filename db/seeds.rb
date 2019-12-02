@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Subject.create(name: "Mathematics", category: "Sciences", number_of_learners: "4")
+Subject.create(name: "English", category: "Language", number_of_learners: "6")
+Subject.create(name: "Mathematics", category: "Sciences", number_of_learners: "4")
+Subject.create(name: "English", category: "Language", number_of_learners: "6")
+Subject.create(name: "Mathematics", category: "Sciences", number_of_learners: "4")
+Subject.create(name: "English", category: "Language", number_of_learners: "6")
+

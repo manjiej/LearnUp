@@ -1,2 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <nav class="navbar">
+    <h2>LearnUp</h2>
+    <%= link_to 'Sign in', new_user_session_path, class:"btn btn-light" %>
+  </nav>
+
+  <div class="banner-container">
+    <h1>Find your perfect buddies</h1>
+    <p>Work more efficiently</p>
+  </div>
+</div>
+
+<!-- <div class="card-columns subjects-cards">
+  <% @subjects.each do |subject| %>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-title"><%= subject.name %></p>
+        <p><%= subject.category %></p>
+        <div class="card-infos">
+          <p>Number of learners: <%= subject.number_of_learners %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div> -->
+
+<div class="cards subjects-cards">
+  <% @subjects.each do |subject| %>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-title"><%= subject.name %></p>
+        <p><%= subject.category %></p>
+        <div class="card-infos">
+          <p>Number of learners: <%= subject.number_of_learners %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+<footer>
+  <p>Copyright Le Wagon.</p>
+  <p>Contact info: </p>
+</footer>
