@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <nav class="navbar fixed-top">
+    <h2>LearnUp</h2>
+    <%= link_to 'Sign in', new_user_session_path, class:"btn btn-light" %>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card-deck subject-card-deck">
+      <% @subjects.each do |subject| %>
+          <div class="card subject-card" style="margin: 20px">
+            <div class="card-body">
+              <h2 class="card-title"><%= subject.name %></h2>
+              <p><%= subject.category %></p>
+              <div class="card-infos">
+                <%= subject.number_of_learners %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'New Subject', new_subject_path, class:"btn btn-outline-dark" %>
