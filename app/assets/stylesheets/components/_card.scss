@@ -14,7 +14,13 @@
 }
 
 .card {
-  flex: 1 0 33%;
+  flex: 1 0 20%;
+  transition: 1s;
+  margin: 5%;
+}
+
+.card:hover {
+  transform: scale(1.1)
 }
 
 .cards {
@@ -24,4 +30,6 @@
 .card-body {
   font-family: "Comfortaa"
 }
+
+
 
