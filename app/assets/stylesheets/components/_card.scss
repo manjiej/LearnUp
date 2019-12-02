@@ -3,8 +3,25 @@
   font-size: 20px;
 }
 
-.subject-card-deck {
+.subjects-cards {
   padding: 100px 0;
 }
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.card {
+  flex: 1 0 33%;
+}
+
+.cards {
+  padding: 100px;
+}
+
+.card-body {
+  font-family: "Comfortaa"
+}
 
