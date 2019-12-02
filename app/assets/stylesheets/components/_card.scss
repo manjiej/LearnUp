@@ -3,32 +3,42 @@
   font-size: 20px;
 }
 
-.subjects-cards {
-  padding: 100px 0;
-}
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  padding: 70px;
 }
 
 .card {
   flex: 1 0 20%;
-  transition: 1s;
   margin: 5%;
+    border-radius: 12px;
+
 }
 
 .card:hover {
-  transform: scale(1.1)
+  border: 1px solid black;
 }
 
-.cards {
-  padding: 100px;
+.card-infos p {
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+  font-size: 13px;
+}
+
+.card-infos a:hover {
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .card-body {
-  font-family: "Comfortaa"
+  font-family: "Comfortaa";
+}
+
+.card-title {
+  font-family: "Sulphur";
+  font-size: 28px;
 }
 
 
