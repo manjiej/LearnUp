@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :groups
+  resources :subjects do
+    resources :groups do
+      resources :comments, only: [ :new, :create ]
+    end
+  end
+
   devise_for :users
-  resources :subjects
   root to: 'pages#home'
   get '/users/profile', to: 'users#profile'
 
