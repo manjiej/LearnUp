@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :subjects do
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :subjects, only: [:index, :show] do
     resources :groups do
-      resources :comments, only: [ :new, :create ]
+      resources :comments, only: [:index, :new, :create]
     end
+    resources :comments, only: [:show, :edit, :update, :destroy]
   end
 
   devise_for :users
@@ -13,11 +15,5 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :subjects, only: [ :index, :show] do
-    resources :groups, only: [ :index, :show, :new, :create, :update, :destroy]
-    resources :reviews, only: [:create, :destroy]
-  }
-  end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
