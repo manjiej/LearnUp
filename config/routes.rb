@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :subjects, only: [:index, :show] do
-    resources :groups do
-      resources :comments, only: [:index, :new, :create]
+    resources :groups, shallow: true do
+      resources :comments, shallow: true
     end
-    resources :comments, only: [:show, :edit, :update, :destroy]
   end
 
   devise_for :users

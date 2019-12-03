@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
   belongs_to :user
   belongs_to :subject
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end

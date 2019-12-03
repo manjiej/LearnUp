@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
+    @subject = Subject.find(params[:subject_id])
     @group = Group.new
   end
 
