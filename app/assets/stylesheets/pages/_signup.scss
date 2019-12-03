@@ -1,0 +1,27 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    h2 {
+      margin-bottom: 30px;
+    }
+}
+
+.signup-inputs {
+  width: 400px;
+}
+
+.signup-form {
+  background-color: white;
+  padding: 30px;
+  margin-top: 80px;
+  border-radius: 14px;
+  font-family: "Comfortaa";
+}
+
+.signup-btn {
+  margin-top: 30px;
+}
+
+
