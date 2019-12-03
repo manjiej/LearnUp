@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :groups
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :subjects, only: [:index, :show] do
+    resources :groups, shallow: true do
+      resources :comments, shallow: true
+    end
+  end
+
   devise_for :users
-  resources :subjects
   root to: 'pages#home'
   get '/users/profile', to: 'users#profile'
 
@@ -9,6 +14,5 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+

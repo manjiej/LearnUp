@@ -10,22 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_030504) do
+ActiveRecord::Schema.define(version: 2019_12_03_065741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "groups", id: :serial, force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_comments_on_group_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "organizer"
     t.date "timeline"
     t.string "location"
     t.integer "number_of_members"
-    t.integer "user_id", null: false
-    t.integer "subject_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["subject_id"], name: "index_groups_on_subject_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
@@ -77,6 +85,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_030504) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "groups"
   add_foreign_key "groups", "subjects"
   add_foreign_key "groups", "users"
   add_foreign_key "taggings", "tags"

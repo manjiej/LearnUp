@@ -10,10 +10,12 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @groups = Group.find(params[:id])
   end
 
   # GET /groups/new
   def new
+    @subject = Subject.find(params[:subject_id])
     @group = Group.new
   end
 
