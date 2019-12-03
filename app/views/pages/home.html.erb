@@ -1,11 +1,7 @@
 <div class="banner">
-  <nav class="navbar">
-    <h2>LearnUp</h2>
-  </nav>
-
   <div class="banner-container">
-    <h1>Find your perfect buddies</h1>
-    <p>Work more efficiently</p>
+    <h1>Time to form a study group</h1>
+    <p>Find your perfect classmates on LearnUp</p>
   </div>
 </div>
 
@@ -17,15 +13,19 @@
         <p><%= subject.category %></p>
         <div class="card-infos">
           <p>Number of learners: <%= subject.number_of_learners %></p>
+          <%= link_to 'More info', subject, class: 'card-link', style: "color: black" %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 
-
-
-<footer>
-  <p class="copyright">Copyright Le Wagon.</p>
-  <p>Contact info: </p>
-</footer>
+<div class="footer">
+    <ul class ="list-inline">
+      <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="#" target="_blank"><i class="fab fa-github"></i></a></li>
+      <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+    <p>Website coded by 3 students at Le Wagon SZ.</p>
+  </div>
