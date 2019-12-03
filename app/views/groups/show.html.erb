@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @group.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @group.description %>
+</p>
+
+<p>
+  <strong>Organizer:</strong>
+  <%= @group.organizer %>
+</p>
+
+<p>
+  <strong>Timeline:</strong>
+  <%= @group.timeline %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @group.location %>
+</p>
+
+<p>
+  <strong>Number of members:</strong>
+  <%= @group.number_of_members %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @group.user_id %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @group.subject_id %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
