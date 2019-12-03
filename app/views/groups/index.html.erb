@@ -1,39 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Organizer</th>
-      <th>Timeline</th>
-      <th>Location</th>
-      <th>Number of members</th>
-      <th>User</th>
-      <th>Subject</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.title %></td>
-        <td><%= group.description %></td>
-        <td><%= group.organizer %></td>
-        <td><%= group.timeline %></td>
-        <td><%= group.location %></td>
-        <td><%= group.number_of_members %></td>
-        <td><%= group.user_id %></td>
-        <td><%= group.subject_id %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="cards groups-cards">
+  <% @groups.each do |group| %>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-title"><%= group.title %></p>
+        <p><%= group.description %></p>
+        <p>Organizer: <%= group.organizer %></p>
+        <i class="far fa-calendar-alt"></i>
+        <%= group.timeline %>
+        <i class="fas fa-map-marker-alt"></i>
+        <%= group.location %>
+        <i class="fas fa-user-friends"></i>
+        <%= group.number_of_members %>
+        <div>
+          <%= group.user_id %>
+          <%= group.subject_id %>
+        </div>
+        <div class="group-infos">
+          <%= link_to 'Details', group %>
+          <%= link_to 'Edit', edit_group_path(group) %>
+        </div>
+      </div>
+    </div>
     <% end %>
+  </div>
+</div>
+
+<%= link_to 'New Group', new_subject_group_path %>
+
   </tbody>
 </table><br>
 
-<%= link_to 'New Group', new_subject_group_path %>
+
