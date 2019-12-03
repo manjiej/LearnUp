@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_030504) do
     t.date "timeline"
     t.string "location"
     t.integer "number_of_members"
-
     t.integer "user_id", null: false
     t.integer "subject_id", null: false
     t.datetime "created_at", null: false
