@@ -1,0 +1,35 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+    h2 {
+      margin-bottom: 30px;
+    }
+}
+
+.profile-infos {
+  border: 1px solid black;
+  border-radius: 14px;
+  text-align: center;
+  background-color: white;
+  margin-top: 60px;
+  padding: 70px 100px;
+  img {
+    border-radius: 50%;
+    height: 300px;
+    margin: 20px;
+  }
+  p {
+    font-family: "Comfortaa";
+    margin-top: 25px;
+  }
+}
+
+.profile-page {
+  margin-top: 40px;
+  text-align: center;
+}
+
+

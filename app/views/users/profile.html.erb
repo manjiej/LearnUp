@@ -1,5 +1,9 @@
-<ul>
-  <li><%= current_user.name %></li>
-  <li><%= current_user.photo %></li>
-  <li><%= current_user.email %></li>
-</ul>
+<h1 class="profile-page">My Profile Page</h1>
+<div class="profile-container">
+  <div class="profile-infos">
+    <img src="https://images.unsplash.com/photo-1571237129746-c78963372046?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+    <p>Name: <%= current_user.name %></p>
+    <p>Email: <%= current_user.email %></p>
+  </div>
+</div>
+
