@@ -6,16 +6,14 @@
       <div class="card-body">
         <p class="card-title"><%= group.title %></p>
         <p><%= group.description %></p>
-        <p>Organizer: <%= group.organizer %></p>
-        <i class="far fa-calendar-alt"></i>
-        <%= group.timeline %>
-        <i class="fas fa-map-marker-alt"></i>
-        <%= group.location %>
-        <i class="fas fa-user-friends"></i>
-        <%= group.number_of_members %>
+        <p>Organizer: <%= group.user.name %></p>
+        <p><i class="far fa-calendar-alt"></i>
+        <%= group.timeline %></p>
+        <p><i class="fas fa-map-marker-alt"></i>
+        <%= group.location %></p>
+        <p><i class="fas fa-user-friends"></i>
+        <%= group.members.count %></p>
         <div>
-          <%= group.user_id %>
-          <%= group.subject_id %>
         </div>
         <div class="group-infos">
           <%= link_to 'Details', group %>
