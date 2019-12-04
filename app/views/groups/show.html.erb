@@ -1,39 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="show-container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @group.title %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @group.description %>
-</p>
+  <h3><%= @group.title %></h3>
 
-<p>
-  <strong>Timeline:</strong>
-  <%= @group.timeline %>
-</p>
+  <p><%= @group.description %></p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @group.location %>
-</p>
+  <p><i class="far fa-calendar-alt"></i><%= @group.timeline %></p>
 
-<p>
-  <strong>Number of members:</strong>
-  <%= @group.number_of_members %>
-</p>
+  <p><i class="fas fa-map-marker-alt"></i><%= @group.location %></p>
+  <p><i class="fas fa-user-friends"></i><%= @group.members.count %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @group.user_id %>
-</p>
+  <p>Created by: <%= @group.user.name %></p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @group.subject_id %>
-</p>
+  <p><%= @group.subject.name %></p>
 
-<%= link_to 'Edit', edit_group_path(@group) %>
-<!-- <%#= link_to 'Back', subject_groups_path %> -->
+  <%= link_to 'Edit', edit_group_path(@group) %>
+  <!-- <%#= link_to 'Back', subject_groups_path %> -->
+
+</div>

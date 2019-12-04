@@ -1,0 +1,25 @@
+.grp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grp-inputs {
+  width: 650px;
+}
+
+.grp-form {
+  background-color: white;
+  padding: 30px;
+  margin-top: 50px;
+  border-radius: 14px;
+  font-family: "Comfortaa";
+  margin-bottom: 50px;
+}
+
+.new-grp-btn a {
+  border-radius: 5px;
+}
+
+
