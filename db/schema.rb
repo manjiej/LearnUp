@@ -31,12 +31,14 @@ ActiveRecord::Schema.define(version: 2019_12_03_150043) do
   create_table "groups", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.string "organizer"
     t.date "timeline"
     t.string "location"
+    t.integer "number_of_members"
     t.bigint "user_id", null: false
     t.bigint "subject_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["subject_id"], name: "index_groups_on_subject_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
@@ -80,8 +82,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_150043) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "photo"
     t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
