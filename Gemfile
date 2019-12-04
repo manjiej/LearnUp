@@ -15,6 +15,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'bootstrap', '~> 4.3.1'
+gem 'rails-ujs'
+gem 'jquery-rails'
 
 gem 'acts-as-taggable-on', '~> 6.0'
 
