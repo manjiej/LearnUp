@@ -27,9 +27,11 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
+    @user = current_user
 
     @subject = Subject.find(params[:subject_id])
     @group.subject = @subject
+    @group.user = @user
     if @group.save
       redirect_to subject_groups_path(@subject)
     else
