@@ -14,6 +14,7 @@ Subject.delete_all
 
 puts "Creating database..."
 
+
 Subject.create!(name: "Mathematics", category: "Sciences", number_of_learners: 4)
 Subject.create!(name: "English", category: "Language", number_of_learners: 4)
 Subject.create!(name: "Algorithms", category: "IT", number_of_learners: 4)
@@ -27,7 +28,6 @@ User.create!(name: "Mark", email: "mark@gmail.com", password: "123321", created_
 User.create!(name: "Bill", email: "bill@gmail.com", password: "234123", created_at: "2019-12-02", updated_at: "2019-12-04")
 User.create!(name: "Ryan", email: "ryan@gmail.com", password: "123234", created_at: "2019-12-02", updated_at: "2019-12-04")
 User.create!(name: "Paula", email: "paula@gmail.com", password: "123765", created_at: "2019-12-02", updated_at: "2019-12-04")
-
 
 # Group.create!(title: "Algebra Class", description: "Come to my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 1, subject_id: 10)
 # Group.create!(title: "Maths Class", description: "Welcome to my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 3, subject_id: 10)
