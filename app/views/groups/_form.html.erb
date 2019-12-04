@@ -1,3 +1,5 @@
+<div class="grp-container">
+  <div class="grp-form">
 
 <%= simple_form_for [@subject, @group] do |f| %>
   <%= f.error_notification %>
@@ -12,7 +14,15 @@
     <%#= f.association :subject %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+        <%#= f.association :user %>
+
+        <%#= f.association :subject %>
+      </div>
+
+      <div class="form-actions" style="text-align: center; padding: 10px;">
+        <%= f.button :submit, class: "btn btn-dark" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+</div>

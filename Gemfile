@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'bootstrap', '~> 4.3.1'
+gem 'geocoder'
 gem 'rails-ujs'
 gem 'jquery-rails'
 
