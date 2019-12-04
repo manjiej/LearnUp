@@ -12,12 +12,7 @@
         <p class="card-title"><%= subject.name %></p>
         <p><%= subject.category %></p>
         <div class="card-infos">
-<<<<<<< HEAD
-          <p>Number of learners: <%= subject.number_of_learners %></p>
-=======
-
           <p>Number of groups: <%= subject.groups.count %></p>
->>>>>>> b880cf59212395347e5d4560edc3ed7a2d3cd466
           <%= link_to 'More info', subject_groups_path(subject), class: 'card-link', style: "color: black" %>
         </div>
       </div>
