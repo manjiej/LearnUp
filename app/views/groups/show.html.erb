@@ -1,48 +1,52 @@
-<<<<<<< HEAD
-<div class="show-container">
+<div class="row">
+  <div class="col-md-6 col-12">
+    <p id="notice"><%= notice %></p>
+    <div class="card-detail" style= "text-align: center">
+      <div class="card-head">
+        <p class="card-title" style="font-size: 35px;"><%= @group.title %></p>
+        <h4><%= @group.description %></h4>
+      </div>
 
-  <p id="notice"><%= notice %></p>
+      <p><i class="far fa-calendar-alt" style="padding-right: 5px;"></i><%= @group.timeline %></p>
 
-  <h3><%= @group.title %></h3>
+      <p><i class="fas fa-map-marker-alt" style="padding-right: 5px;"></i><%= @group.location %></p>
+      <p><i class="fas fa-user-friends" style="padding-right: 5px;"></i><%= @group.members.count %></p>
 
-  <p><%= @group.description %></p>
+      <p><strong>Created by:</strong> <%= @group.user.name %></p>
 
-  <p><i class="far fa-calendar-alt"></i><%= @group.timeline %></p>
+      <p><strong>Subject:</strong> <%= @group.subject.name %></p>
+     </div>
+  </div>
 
-  <p><i class="fas fa-map-marker-alt"></i><%= @group.location %></p>
-  <p><i class="fas fa-user-friends"></i><%= @group.members.count %></p>
+  <div class="col-md-6 col-12">
+    <div class="map-container">
 
-  <p>Created by: <%= @group.user.name %></p>
+      <div id='map' style='width: 700px; height: 100vh;;'></div>
 
-  <p><%= @group.subject.name %></p>
+      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
 
+      <script>
+      mapboxgl.accessToken = 'pk.eyJ1Ijoiam1hbmppZSIsImEiOiJjazNxdWt4MXAwNWx3M2JuM25oNXF3NDJyIn0.tc2b3Sv_UnYFimYEL0wuJw';
+
+      const map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v10',
+          center: [-90.96, -0.47],
+          zoom: 8
+      });
+
+      const marker = <%= raw @group.to_json %>
+
+      new mapboxgl.Marker()
+        .setLngLat([ marker.longitude, marker.latitude ])
+      .addTo(map);
+
+    </script>
+    </div>
+  </div>
 </div>
 
-<div
-id='map'
-style='width: 400px; height: 300px;'></div>
-
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
-
-<script>
-mapboxgl.accessToken = 'pk.eyJ1Ijoiam1hbmppZSIsImEiOiJjazNxdWt4MXAwNWx3M2JuM25oNXF3NDJyIn0.tc2b3Sv_UnYFimYEL0wuJw';
-
-const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10',
-    center: [-90.96, -0.47],
-    zoom: 8
-});
-
-const marker = <%= raw @group.to_json %>
-
-new mapboxgl.Marker()
-  .setLngLat([ marker.longitude, marker.latitude ])
-  .addTo(map);
-
-</script>
 
 <%= link_to 'Edit', edit_group_path(@group) %>
 <%= link_to 'Back', subject_groups_path(@group) %>
-

@@ -29,10 +29,10 @@ User.create!(name: "Bill", email: "bill@gmail.com", password: "234123", created_
 User.create!(name: "Ryan", email: "ryan@gmail.com", password: "123234", created_at: "2019-12-02", updated_at: "2019-12-04")
 User.create!(name: "Paula", email: "paula@gmail.com", password: "123765", created_at: "2019-12-02", updated_at: "2019-12-04")
 
-# Group.create!(title: "Algebra Class", description: "Come to my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 1, subject_id: 10)
-# Group.create!(title: "Maths Class", description: "Welcome to my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 3, subject_id: 10)
+# Group.create!(title: "Algebra Class", description: "Come to my classes!", timeline: "2019-12-04", location: "Atlanta", user_id: 1, subject_id: 10)
+# Group.create!(title: "Maths Class", description: "Welcome to my classes!", timeline: "2019-12-04", location: "Paris", user_id: 3, subject_id: 10)
 
-# Group.create!(title: "English Oral Exam", description: "Come to my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 2, subject_id: 11)
+# Group.create!(title: "English Oral Exam", description: "Come to my classes!", timeline: "2019-12-04", location: "Beijing", user_id: 2, subject_id: 11)
 # Group.create!(title: "English Grammar", description: "Come to my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 3, subject_id: 11)
 
 # Group.create!(title: "Algorithms Lesson", description: "Come to my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 3, subject_id: 12)

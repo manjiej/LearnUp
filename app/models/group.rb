@@ -1,4 +1,6 @@
 class Group < ApplicationRecord
+  # geocoded_by :address_compiler
+
   belongs_to :user
   belongs_to :subject
   has_many :comments, dependent: :destroy
@@ -12,4 +14,8 @@ class Group < ApplicationRecord
 
   has_many :group_members
   has_many :members, through: :group_members, source: :user
+
+  # def address_compiler
+  #   location
+  # end
 end
