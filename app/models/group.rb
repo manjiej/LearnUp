@@ -7,6 +7,9 @@ class Group < ApplicationRecord
   validates :timeline, presence: true
   validates :location, presence: true
 
+  # geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   has_many :group_members
   has_many :members, through: :group_members, source: :user
 end

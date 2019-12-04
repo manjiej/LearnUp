@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-    @groups = Group.find(params[:id])
+    @group = Group.find(params[:id])
   end
 
   # GET /groups/new

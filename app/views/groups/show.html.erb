@@ -34,6 +34,30 @@
   <strong>Subject:</strong>
   <%= @group.subject_id %>
 </p>
+<div
+id='map'
+style='width: 400px; height: 300px;'></div>
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoiam1hbmppZSIsImEiOiJjazNxdWt4MXAwNWx3M2JuM25oNXF3NDJyIn0.tc2b3Sv_UnYFimYEL0wuJw';
+
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10',
+    center: [-90.96, -0.47],
+    zoom: 8
+});
+
+const marker = <%= raw @group.to_json %>
+
+new mapboxgl.Marker()
+  .setLngLat([ marker.longitude, marker.latitude ])
+  .addTo(map);
+
+</script>
 
 <%= link_to 'Edit', edit_group_path(@group) %>
 <%= link_to 'Back', subject_groups_path(@group) %>
