@@ -35,5 +35,25 @@
   <%= @group.subject_id %>
 </p>
 
+<%= render 'comments/form', comments: @comments %>
+
+<div class="cards subjects-cards">
+  <% @group.comments.each do |comment| %>
+    <div class="card span-3 float-left">
+      <div class="card-body">
+        <p class="card-title"><%= comment.content %></p>
+        <div class="card-infos">
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<ul>
+  <% @group.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_group_path(@group) %>
 <%= link_to 'Back', subject_groups_path(@group) %>
