@@ -13,7 +13,7 @@
         <p><%= subject.category %></p>
         <div class="card-infos">
           <p>Number of learners: <%= subject.number_of_learners %></p>
-          <%= link_to 'More info', subject, class: 'card-link', style: "color: black" %>
+          <%= link_to 'More info', subject_groups_path(subject), class: 'card-link', style: "color: black" %>
         </div>
       </div>
     </div>
