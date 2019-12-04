@@ -12,7 +12,6 @@
         <p class="card-title"><%= subject.name %></p>
         <p><%= subject.category %></p>
         <div class="card-infos">
-
           <p>Number of groups: <%= subject.groups.count %></p>
           <%= link_to 'More info', subject_groups_path(subject), class: 'card-link', style: "color: black" %>
         </div>

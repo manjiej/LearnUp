@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_150043) do
     t.integer "subject_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
     t.index ["subject_id"], name: "index_groups_on_subject_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end

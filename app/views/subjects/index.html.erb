@@ -18,9 +18,15 @@
         <td><%= subject.name %></td>
         <td><%= subject.category %></td>
         <td><%= subject.number_of_learners %></td>
+<<<<<<< HEAD
+        <td><%= link_to 'Show', subject %></td>
+<!--         <td><%#= link_to 'Edit', edit_subject_path(subject) %></td>
+ -->        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+=======
         <td><%= link_to 'Show', subject_groups_path %></td>
         <!-- <td><%#= link_to 'Edit', edit_subject_path(subject) %></td> -->
         <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+>>>>>>> b880cf59212395347e5d4560edc3ed7a2d3cd466
       </tr>
     <% end %>
   </tbody>

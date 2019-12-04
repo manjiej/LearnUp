@@ -21,7 +21,7 @@ Subject.create!(id: 4, name: "Chinese", category: "Language", number_of_learners
 Subject.create!(id: 5, name: "Philosophy", category: "Arts & History", number_of_learners: "4")
 Subject.create!(id: 6, name: "Economics", category: "Social Sciences", number_of_learners: "6")
 
-User.create!(id: 1, name: "Hilarry", email: "hillary@gmail.com", password: "123123", created_at: "2019-12-02", updated_at: "2019-12-04")
+User.create!(id: 1, name: "Hillary", email: "hillary@gmail.com", password: "123123", created_at: "2019-12-02", updated_at: "2019-12-04")
 User.create!(id: 2, name: "Steve", email: "steve@gmail.com", password: "321123", created_at: "2019-12-02", updated_at: "2019-12-04")
 User.create!(id: 3, name: "Mark", email: "mark@gmail.com", password: "123321", created_at: "2019-12-02", updated_at: "2019-12-04")
 User.create!(id: 4, name: "Bill", email: "bill@gmail.com", password: "234123", created_at: "2019-12-02", updated_at: "2019-12-04")
@@ -37,7 +37,7 @@ Group.create!(id: 8, title: "English Grammar", description: "Come to my classes!
 
 Group.create!(id: 4, title: "Algorithms Lesson", description: "Come to my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 3, subject_id: 3)
 
-Group.create!(id: 5, title: "Logics Lesson", description: "Join my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 4, subject_id: 4)
+Group.create!(id: 5, title: "Chinese Lessons", description: "Join my classes!", timeline: "2019-12-04", location: "Shenzhen", user_id: 4, subject_id: 4)
 
 Group.create!(id: 6, title: "Moral Foundations of Politics", description: "We'll talk about politics :)", timeline: "2019-12-04", location: "Shenzhen", user_id: 5, subject_id: 5)
 
