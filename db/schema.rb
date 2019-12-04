@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_053837) do
     t.integer "user_id"
   end
 
-  create_table "groups", force: :cascade do |t|
+  create_table "groups", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "organizer"
