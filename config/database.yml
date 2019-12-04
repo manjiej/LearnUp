@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: LearnUp_production
-  username: LearnUp
+  username: learnup
   password: <%= ENV['LEARNUP_DATABASE_PASSWORD'] %>
