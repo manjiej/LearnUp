@@ -1,7 +1,7 @@
-<div class="cards groups-cards">
+<div class="cards group-cards">
   <% @groups.each do |group| %>
-    <div class="card">
-      <div class="card-body">
+    <div class="group">
+      <div class="group-body">
         <p class="card-title"><%= group.title %></p>
         <p><%= group.description %></p>
         <p>Organizer: <%= group.user.name %></p>
