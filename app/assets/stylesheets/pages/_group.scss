@@ -1,0 +1,15 @@
+.group-cards {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 30px;
+}
+
+.group {
+  flex: 1 0 20%;
+  height: 332px;
+  margin: 2%;
+  border-radius: 1px;
+  border: 1px solid black
+}
+
