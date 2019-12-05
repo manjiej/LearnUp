@@ -1,15 +1,42 @@
 // Specific CSS for your home-page
 
+// body {
+//   margin: 0;
+//   width: 100%;
+//   height: 100vh;
+//   font-family: "Exo", sans-serif;
+//   color: #fff;
+//   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+//   background-size: 400% 400%;
+//   animation: gradientBG 15s ease infinite;
+// }
+
+// @keyframes gradientBG {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
+
+body {
+  background-color: white;
+}
+
 .banner {
   height: 550px;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  background-color: #FF807B;
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
   h2 {
     font-size: 50px;
     font-family: "Pacifico";
-    color: white;
+    color: #C6E7D8;
     text-shadow: 1px 1px 1px black;
   }
 }
@@ -18,12 +45,6 @@
   text-align: center;
   padding: 300px;
   color: white;
-  h1 {
-    font-size: 55px;
-    font-family: $headers-font;
-    text-shadow: 1px 1px 1px black;
-    padding-bottom: 15px;
-  }
   p {
     font-size: 20px;
     font-family: $headers-font;
@@ -33,7 +54,7 @@
 
 
 .footer {
-  background-color: #696368;
+  background-color: #FF807B;
   /*opacity: 0.8;*/
   height: 200px;
   margin-top: 50px;
@@ -76,3 +97,67 @@
   text-decoration: none;
 }
 
+.border{
+  padding: 5px;
+    background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
+  background-size: 400% 400%;
+  height: 400px;
+  background-position: 25% 50%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 5s ease infinite;
+    position: relative;
+  bottom: 310px;
+  left: 70px;
+}
+.inner-cutout{
+  padding: 40px 0;
+  display: block;
+  background-color:#ff6f69;
+  margin: 2%;
+  padding-bottom: 40px;
+  height: 300px;
+  background: radial-gradient(#ff6f69, #ff8b87);
+  background-size: 300%;
+  background-position:50% 50%;
+
+}
+.knockout {
+  vertical-align: middle;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 50pt;
+  color: blue;
+  color: #fff;
+  background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
+  background-size: 400%;
+   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  padding: 20px;
+}
+
+.knockout{
+    animation: Gradient 5s ease infinite;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 5s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 30% 50%
+  }
+  50% {
+    background-position: 25% 50%
+  }
+  100% {
+    background-position: 30% 50%
+  }
+
+}
+
+.main{
+  width: 500px;
+  height: 800px;
+  margin-left: 40%;
+  margin-right:40%;
+  margin-top: 10%;
+}
