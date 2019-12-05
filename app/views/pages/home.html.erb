@@ -3,23 +3,26 @@
     <div class="main">
       <div class = "border">
         <div class = "inner-cutout">
-          <h1 class="knockout">Form your study group</h1>
+          <h1 class="knockout">Form your study group!</h1>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<p id="homepage-title">All our Subjects (<%= @subjects.length %>)</p>
 <div class="cards subjects-cards">
   <% @subjects.each do |subject| %>
-    <div class="card">
+    <div class="card homepage-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= subject.photo %>); background-size: cover">
       <div class="card-body">
         <p class="card-title"><%= subject.name %></p>
-        <p><%= subject.category %></p>
         <div class="card-infos">
+        <p id="subject-category"><%= subject.category %></p>
           <p>Number of groups: <%= subject.groups.count %></p>
-          <%= link_to 'More info', subject_groups_path(subject), class: 'card-link', style: "color: black" %>
         </div>
+          <div class="btn btn--beta">
+            <span><%= link_to 'Find Groups', subject_groups_path(subject), class: 'card-link'%></span>
+          </div>
       </div>
     </div>
   <% end %>
@@ -32,5 +35,4 @@
       <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
       <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
     </ul>
-    <p>Website coded by 3 students at Le Wagon SZ.</p>
-  </div>
+</div>

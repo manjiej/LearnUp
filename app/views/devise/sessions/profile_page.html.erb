@@ -1,0 +1,26 @@
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto active-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Home", root_path%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Messages", "#"%>
+        </li>
+        <li class="dropdown">
+          <%= user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "My profile", new_user_session_path, class: "dropdown-item"%>
+            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="homepage-nav">
+          <%= link_to "Login", new_user_session_path%>
+          <%= link_to "Sign Up", new_user_registration_path%>
+          <%= link_to "Home", root_path%>
+        </li>
+      <% end %>
+    </ul>
+  </div>
