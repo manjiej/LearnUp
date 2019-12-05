@@ -12,6 +12,8 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
+    @comments = Comment.where(group_id: params[:group_id])
+    @comment = Comment.new
   end
 
   # GET /groups/new

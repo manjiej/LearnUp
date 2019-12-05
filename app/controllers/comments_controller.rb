@@ -14,9 +14,10 @@ class CommentsController < ApplicationController
     @group = Group.find(params[:group_id])
     @comment.group = @group
     if @comment.save
-      redirect_to subject_groups_path(@group)
+      redirect_to group_path(@group)
     else
       render :new
+    end
   end
 
   def edit
@@ -36,6 +37,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:title, :description, :timeline, :location, :user_id, :subject_id)
+      params.require(:comment).permit(:content)
     end
 end
