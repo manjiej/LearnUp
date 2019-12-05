@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :groups, through: :group_members
 
   validates :name, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader
 end
