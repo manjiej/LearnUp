@@ -14,6 +14,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @comments = Comment.where(group_id: params[:group_id])
     @comment = Comment.new
+    @marker = @group.slice[latitude: @group.latitude, longitude: @group.longitude]
   end
 
   # GET /groups/new
