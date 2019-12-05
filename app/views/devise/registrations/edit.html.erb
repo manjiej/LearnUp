@@ -9,7 +9,7 @@
       <div class="form-inputs registration-inputs">
       <div style="display:flex">
         <%= f.input :photo, autofocus: true %>
-        <%=  %>
+        <%= image_tag current_user.photo_url %>
       </div>
         <%= f.input :email, required: true, autofocus: true %>
 
