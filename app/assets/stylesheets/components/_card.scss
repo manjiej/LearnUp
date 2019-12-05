@@ -1,29 +1,37 @@
 .card-title {
+  margin-top: 10px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding: 50px;
+  padding: 30px;
 }
 
 .card {
   flex: 1 0 20%;
-  margin: 5%;
-  border-radius: 12px;
+  height: 425px;
+  margin: 2%;
+  border-radius: 1px;
 }
 
-.card:hover {
-  border: 1px solid black;
+.card img {
+  opacity: 0.2;
 }
+
+.card-infos {
+  margin-top: 105px;
+  margin-bottom: 83px;
+  color: white;
+  font-family: "Comfortaa";
+}
+
 
 .card-infos p {
-  border-bottom: 1px solid black;
-  padding-bottom: 20px;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .card-infos a:hover {
@@ -33,16 +41,104 @@
 
 .card-body {
   font-family: "Comfortaa";
-  color: black;
+  color: white;
 }
 
 .card-title {
-  font-family: "Sulphur";
-  font-size: 28px;
+  font-family: "Courgette";
+  font-size: 30px;
 }
 
 .group-infos a {
   color:black;
+}
+
+#subject-category {
+  font-size: 20px;
+}
+
+$time: 330ms;
+
+$btns: (
+  beta: (
+    gstart: #A78BD5,
+    gend: #80CDC5,
+    tstart: #80CDC5,
+    tend: #A78BD5
+  ),
+);
+
+.card-link {
+  color: #E1DBEA;
+}
+
+.card-link:hover {
+  color: #E1DBEA;
+}
+
+.btn {
+  font-family: 'Comfortaa';
+  font-weight: 900;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  border-radius: 3.5rem / 100%;
+  position: relative;
+  min-width: 10rem;
+  max-width: 90vw;
+  overflow: hidden;
+  border: 0;
+  cursor: pointer;
+  transition: all $time;
+
+  & + & {
+    margin-top: 1rem;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    content: "";
+    background-color: #7783c6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale(4) translateX(-100%);
+    transition: all $time * 1.5 ease-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      transform: scale(4) translate(37%);
+      transition: 1,6s;
+    }
+  }
+}
+
+
+@each $bname, $bcolors in $btns {
+  .btn--#{$bname} {
+    background-color: map-get($bcolors, gstart);
+    color: map-get($bcolors, tstart);
+
+    &:before {
+      background-color: map-get($bcolors, gend);
+      background-image: linear-gradient(to right, map-get($bcolors, gend) 30%, map-get($bcolors, gstart) 100%);
+      position: absolute;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: map-get($bcolors, tend);
+    }
+  }
 }
 
 

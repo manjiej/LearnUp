@@ -15,12 +15,14 @@ Subject.delete_all
 puts "Creating database..."
 
 
-Subject.create!(name: "Mathematics", category: "Sciences", number_of_learners: 4)
-Subject.create!(name: "English", category: "Language", number_of_learners: 4)
-Subject.create!(name: "Algorithms", category: "IT", number_of_learners: 4)
-Subject.create!(name: "Chinese", category: "Language", number_of_learners: 6)
-Subject.create!(name: "Philosophy", category: "Arts & History", number_of_learners: 4)
-Subject.create!(name: "Economics", category: "Social Sciences", number_of_learners: 6)
+Subject.create!(name: "Mathematics", category: "Sciences", number_of_learners: 4, photo: "https://images.pexels.com/photos/399161/pexels-photo-399161.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")
+Subject.create!(name: "English", category: "Language", number_of_learners: 4, photo: "https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=5000")
+Subject.create!(name: "Algorithms", category: "IT", number_of_learners: 4, photo:"https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")
+Subject.create!(name: "Chinese", category: "Language", number_of_learners: 6, photo: "https://images.pexels.com/photos/414648/pexels-photo-414648.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")
+Subject.create!(name: "Philosophy", category: "Arts & History", number_of_learners: 4, photo: "https://images.pexels.com/photos/1352751/pexels-photo-1352751.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")
+Subject.create!(name: "Economics", category: "Social Sciences", number_of_learners: 6, photo: "https://images.pexels.com/photos/268415/pexels-photo-268415.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")
+Subject.create!(name: "Physics", category: "Sciences", number_of_learners: 6, photo: "https://images.pexels.com/photos/2186246/pexels-photo-2186246.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")
+Subject.create!(name: "Chemistry", category: "Sciences", number_of_learners: 6, photo: "https://images.pexels.com/photos/399160/pexels-photo-399160.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")
 
 User.create!(name: "Hillary", email: "hillary@gmail.com", password: "123123", created_at: "2019-12-02", updated_at: "2019-12-04")
 User.create!(name: "Steve", email: "steve@gmail.com", password: "321123", created_at: "2019-12-02", updated_at: "2019-12-04")

@@ -1,8 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-  <h2 style="color: #88D9B1">LearnUp</h2>
+<div class="navbar navbar-expand-sm navbar-lewagon" style= "background-color: #9D7ED0; opacity: 0.9; z-index:1000">
+  <h2>LearnUp</h2>
 <!--     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
- -->    <% end %>
+ -->
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,10 +12,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active" style="margin-right: 10px">
-          <%= link_to "Home", root_path, class: "btn btn-outline-dark" %>
+          <%= link_to "Home", root_path, class: "btn-home"%>
         </li>
-        <li class="nav-item" style="margin-right: 10px">
-          <%= link_to "Messages", '#', class: "btn btn-outline-dark" %>
+        <li class="nav-item btn-signup" style="margin-right: 10px">
+          <%= link_to "Messages", '#', class: "btn-signup"%>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.photo}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -28,9 +27,9 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Home", root_path, class: "btn btn-link home-btn"%>
-          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-dark" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-dark" %>
+          <%= link_to "Home", root_path, class: "btn-home"%>
+          <%= link_to "Login", new_user_session_path, class: "btn-login" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn-signup" %>
 
         </li>
       <% end %>

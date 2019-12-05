@@ -1,6 +1,7 @@
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  padding: 20px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,9 +13,54 @@
 }
 .navbar h2 {
   font-family: "Pacifico";
-  font-size: 35px;
+  font-size: 65px;
+  color: #ddd7e8;
+}
+
+.homepage-nav a {
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px;
+  font-family: "Passion One";
 }
 
 .nav-item a {
-  border-radius: 10%;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px;
+  font-family: "Passion One";
 }
+
+.btn-home {
+  color: #71C7BE;
+  transition: 0.3s;
+}
+
+.btn-login {
+  color: #70b2aa;
+  transition: 0.3s;
+}
+
+.btn-signup {
+  color: #a2d6d0;
+  transition: 0.3s;
+}
+
+.btn-home:hover {
+  font-size: 26px;
+  color: #ddd7e8;
+}
+
+.btn-login:hover {
+  font-size: 26px;
+  color: #ddd7e8;
+}
+
+.btn-signup:hover {
+  font-size: 26px;
+  color: #ddd7e8;
+}
+
+
+
+
