@@ -16,6 +16,11 @@
         <div class="group-infos">
           <%= link_to 'Details', group %>
           <%= link_to 'Edit', edit_group_path(group) %>
+
+          <%# if policy(Group).create? %>
+            <%#= link_to "New Group", new_subject_group_path %>
+          <%# end %>
+
         </div>
       </div>
     </div>

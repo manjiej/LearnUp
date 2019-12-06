@@ -10,11 +10,37 @@
       <p><i class="far fa-calendar-alt" style="padding-right: 5px;"></i><%= @group.timeline %></p>
 
       <p><i class="fas fa-map-marker-alt" style="padding-right: 5px;"></i><%= @group.location %></p>
-      <p><i class="fas fa-user-friends" style="padding-right: 5px;"></i><%= @group.members.count %></p>
+      <p><i class="fas fa-user-friends" style="padding-right: 5px;"></i><%= @group.group_members.count %></p>
 
       <p><strong>Created by:</strong> <%= @group.user.name %></p>
 
       <p><strong>Subject:</strong> <%= @group.subject.name %></p>
+
+      <% if %>
+      <% !(@group.group_members.include? current_user) %>
+      <div class="button_to"><%= button_to "Join the group!", join_group_path(@group), remote: true %></div>
+      <% end %>
+  </div>
+
+      <% @groups.each do |group| %>
+        <% if policy(group).edit? %>
+          <%= link_to "Update", edit_group_path(group) %>
+        <% end %>
+      <% end %>
+
+      <%= render 'comments/form', comments: @comments %>
+
+      <div class="cards subjects-cards">
+        <% @group.comments.each do |comment| %>
+          <div class="card span-3 float-left">
+            <div class="card-body">
+              <p class="card-comments"><%= comment.content %></p>
+              <div class="card-infos">
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
      </div>
   </div>
 
@@ -47,20 +73,22 @@
   </div>
 </div>
 
+<script>
+/**
+  const AddGroupMemberOnClick = () => {
+    const button = document.querySelector('.button_to');
+      button.addEventListener('click', (event) => {
 
-<%= render 'comments/form', comments: @comments %>
 
-<div class="cards subjects-cards">
-  <% @group.comments.each do |comment| %>
-    <div class="card span-3 float-left">
-      <div class="card-body">
-        <p class="card-title"><%= comment.content %></p>
-        <div class="card-infos">
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+        @group.members.name = current_user
+      });
+  }
+
+  AddGroupMemberOnClick();
+  **/
+</script>
+
+
 
 <%= link_to 'Edit', edit_group_path(@group) %>
 <%= link_to 'Back', subject_groups_path(@group) %>
