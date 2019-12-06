@@ -2,7 +2,7 @@
   <% @groups.each do |group| %>
     <div class="card group">
         <p class="card-title" style="color: #7153a0"><%= group.title %></p>
-        <p><em>"<%= group.description %>"</em></p>
+        <p><em>- <%= group.description %> -</em></p>
         <p>Study group created by <%= group.user.name %></p>
         <p><i class="far fa-calendar-alt" style="color: #7153a0; margin-right: 5px;"></i>
         Session on <%= group.timeline %></p>

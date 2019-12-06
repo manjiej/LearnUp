@@ -1,63 +1,58 @@
 <div class="row">
   <div class="col-md-6 col-12">
     <p id="notice"><%= notice %></p>
-    <div class="card-detail" style= "text-align: center">
+    <div class="card-detail" style= "text-align: center; font-family: 'Quicksand'; font-size: 20px; margin-top: 60px;">
       <div class="card-head show-head">
-        <p class="card-title" style="font-size: 35px;"><%= @group.title %></p>
-        <h4><%= @group.description %></h4>
+        <p class="card-title" style="font-size: 35px; color: #7153A0"><%= @group.title %></p>
+        <p><em>- <%= @group.description %> -</em></p>
       </div>
 
-      <p><i class="far fa-calendar-alt" style="padding-right: 5px; color: #7153a0"></i><%= @group.timeline %></p>
+      <p><i class="far fa-calendar-alt" style="padding-right: 8px; color: #7153a0"></i>Session on <%= @group.timeline %></p>
 
-      <p><i class="fas fa-map-marker-alt" style="padding-right: 5px; color: #7153a0"></i><%= @group.location %></p>
-      <p><i class="fas fa-user-friends" style="padding-right: 5px; color: #7153a0"></i><%= @group.members.count %></p>
+      <p><i class="fas fa-map-marker-alt" style="padding-right: 8px; color: #7153a0"></i><%= @group.location %></p>
+      <p><i class="fas fa-user-friends" style="padding-right: 8px; color: #7153a0"></i><%= @group.members.count %> people</p>
 
-      <p>Study group created by <%= @group.user.name %> on <strong><%= @group.subject.name %></strong></p>
+      <p>Study group created by <strong><%= @group.user.name %></strong> for <strong><%= @group.subject.name %></strong></p>
 
       <% if %>
       <% !(@group.group_members.include? current_user) %>
-      <div class="button_to"><%= button_to "Join the group!", join_group_path(@group), remote: true %></div>
+      <div class="btn btn--beta" style="margin-top: 110px;"><span><%= button_to "Join the group!", join_group_path(@group), remote: true %></span></div>
       <% end %>
-  </div>
+    </div>
 
-      <% @groups.each do |group| %>
-        <% if policy(group).edit? %>
-          <%= link_to "Update", edit_group_path(group) %>
-        <% end %>
-      <% end %>
-     </div>
+    <%# @groups.each do |group| %>
+      <%# if policy(group).edit? %>
+        <%#= link_to "Update", edit_group_path(group) %>
+      <%# end %>
+    <%# end %>
   </div>
 
   <div class="col-md-6 col-12">
-    <div class="map-container" style="margin-bottom: 50px;">
+    <div class="map-container" style="margin-bottom: 150px;">
 
-      <div id='map' style='width: 700px; height: 100vh;;'></div>
+      <div id='map' style='width: 700px; height: 86vh;;'></div>
 
-      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
-      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
 
-      <script>
-      mapboxgl.accessToken = 'pk.eyJ1Ijoiam1hbmppZSIsImEiOiJjazNxdWt4MXAwNWx3M2JuM25oNXF3NDJyIn0.tc2b3Sv_UnYFimYEL0wuJw';
-
-      const map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v10',
-          // center: [longitude, latitude],
-          zoom: 8
-      });
-
-      const marker = <%= raw @group.to_json %>
-
-      new mapboxgl.Marker()
-        .setLngLat([ marker.longitude, marker.latitude ])
-      .addTo(map);
-
-    </script>
+       <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam1hbmppZSIsImEiOiJjazNxdWt4MXAwNWx3M2JuM25oNXF3NDJyIn0.tc2b3Sv_UnYFimYEL0wuJw';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v10',
+            // center: [longitude, latitude],
+            zoom: 8
+        });
+        const marker = <%= raw @group.to_json %>
+        new mapboxgl.Marker()
+          .setLngLat([ marker.longitude, marker.latitude ])
+        .addTo(map);
+      </script>
     </div>
   </div>
 </div>
 
-<div class="comments" style= "margin: 0 auto; width: 700px; padding-top: 50px; padding-bottom: 50px; background-color: #aedee2; border-radius: 15px 50px 30px">
+<div class="comments" style= "margin: 0 auto; width: 700px; padding-top: 50px; padding-bottom: 50px; background-color: #bac0e2; border-radius: 15px 50px 30px">
   <div class="comments-content" style="font-family: 'Quicksand'; width: 700px; margin: 0 auto; text-align: center; padding: 10px 15px 40px 15px;">
     <%= render 'comments/form', comments: @comments %>
   </div>

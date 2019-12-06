@@ -12,7 +12,7 @@
 
 <div class="cards subjects-cards">
   <% @subjects.each do |subject| %>
-    <div class="card homepage-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= subject.photo %>); background-size: cover">
+    <div class="card homepage-card" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url(<%= subject.photo %>); background-size: cover">
       <div class="card-body">
         <p class="card-title"><%= subject.name %></p>
         <div class="card-infos">
