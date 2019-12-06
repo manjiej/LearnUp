@@ -12,14 +12,26 @@
 .grp-form {
   background-color: white;
   padding: 30px;
-  margin-top: 50px;
   border-radius: 14px;
-  font-family: "Comfortaa";
-  margin-bottom: 50px;
+  font-family: "Quicksand";
+  color: black;
+  width: 715px;
 }
 
-.new-grp-btn a {
-  border-radius: 5px;
+.buttons-grp-form a {
+  color: #E1DBEA;
+  text-decoration: none;
 }
 
+.buttons-grp-form:hover {
+  color: #E1DBEA;
+}
 
+.new-grp-btn input {
+  color: #E1DBEA;
+  font-family: "Quicksand"
+}
+
+.new-grp-btn input:hover {
+  color: #E1DBEA;
+}

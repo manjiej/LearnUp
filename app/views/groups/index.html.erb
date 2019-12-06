@@ -1,30 +1,27 @@
 <div class="cards group-cards">
   <% @groups.each do |group| %>
-    <div class="group">
-      <div class="group-body">
-        <p class="card-title"><%= group.title %></p>
-        <p><%= group.description %></p>
-        <p>Organizer: <%= group.user.name %></p>
-        <p><i class="far fa-calendar-alt"></i>
-        <%= group.timeline %></p>
-        <p><i class="fas fa-map-marker-alt"></i>
+    <div class="card group">
+        <p class="card-title" style="color: #7153a0"><%= group.title %></p>
+        <p><em>"<%= group.description %>"</em></p>
+        <p>Study group created by <%= group.user.name %></p>
+        <p><i class="far fa-calendar-alt" style="color: #7153a0; margin-right: 5px;"></i>
+        Session on <%= group.timeline %></p>
+        <p><i class="fas fa-map-marker-alt" style="color: #7153a0; margin-right: 5px;"></i>
         <%= group.location %></p>
-        <p><i class="fas fa-user-friends"></i>
-        <%= group.members.count %></p>
-        <div>
+        <p><i class="fas fa-user-friends" style="color: #7153a0; margin-right: 5px;"></i>
+        <%= group.members.count %> people</p>
+        <div class="btn btn--beta group-details-btn">
+        <span><%= link_to 'Details', group %></span>
         </div>
-        <div class="group-infos">
-          <%= link_to 'Details', group %>
-          <%= link_to 'Edit', edit_group_path(group) %>
-        </div>
-      </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
 
-<div class="new-grp-btn" style="text-align: center; font-family: Comfortaa; margin-bottom: 50px">
-  <%= link_to 'Create New Group', new_subject_group_path, class: "btn btn-dark" %>
+<div class="grp-create">
+  <p>Want to create your own study group?</p>
+  <div class="btn btn--beta btn-create">
+    <span style="font-family: 'Quicksand'; font-size: 17px;"><%= link_to 'Create new group', new_subject_group_path%></span>
+  </div>
 </div>
 
   </tbody>

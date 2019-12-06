@@ -3,13 +3,49 @@
   flex-wrap: wrap;
   text-align: center;
   padding: 30px;
+  p {
+    color: black;
+    font-family: "Quicksand";
+  }
 }
 
 .group {
   flex: 1 0 20%;
-  height: 332px;
+  height: 365px;
   margin: 2%;
-  border-radius: 1px;
-  border: 1px solid black
+  border-radius: 15px 50px 30px;
+  background-color: #D0CBE2;
 }
+
+.btn-create a {
+  color: #E1DBEA;
+  text-decoration: none;
+}
+
+.grp-create {
+  text-align: center;
+  p {
+    font-family: 'Quicksand';
+    font-size: 30px;
+    color: #A88BD5;
+    font-weight: bold;
+    padding-bottom: 15px;
+  }
+}
+
+.group-details-btn {
+  width: 150px;
+  margin: auto;
+  a {
+    color: #E1DBEA;
+    text-decoration: none;
+    font-family: "Quicksand";
+  }
+}
+
+.group-details-btn:hover {
+  color: #E1DBEA
+}
+
+
 

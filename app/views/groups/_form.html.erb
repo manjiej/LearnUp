@@ -5,24 +5,23 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :timeline %>
-    <%= f.input :location %>
-    <%#= f.association :user %>
-    <%#= f.association :subject %>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :timeline %>
+      <%= f.input :location %>
+    </div>
   </div>
 
-        <%#= f.association :user %>
-
-        <%#= f.association :subject %>
-      </div>
-
-      <div class="form-actions" style="text-align: center; padding: 10px;">
-        <%= f.button :submit, class: "btn btn-dark" %>
-      </div>
-    <% end %>
+  <div class="buttons-grp-form" style="display: flex">
+    <div class="form-actions btn btn--beta new-grp-btn" style="text-align: center; padding: 0; margin-right: 5px;">
+      <span><%= f.button :submit %></span>
+    </div>
+    <div class="form-actions btn btn--beta" style="text-align: center; margin: 0">
+      <span><%= link_to 'Back', subject_groups_path %></span>
+    </div>
   </div>
+<% end %>
+</div>
 
 </div>

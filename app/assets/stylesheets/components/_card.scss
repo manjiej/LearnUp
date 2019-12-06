@@ -21,8 +21,9 @@
 .card-infos {
   margin-top: 105px;
   margin-bottom: 83px;
-  color: white;
-  font-family: "Comfortaa";
+  color: black;
+  font-weight: bold;
+  font-family: "Quicksand";
 }
 
 
@@ -36,13 +37,15 @@
 }
 
 .card-body {
-  font-family: "Comfortaa";
-  color: white;
+  font-family: "Quicksand";
+  color: #3e4154;
+  font-weight: bold
 }
 
 .card-title {
-  font-family: "Courgette";
+  font-family: "Quicksand";
   font-size: 30px;
+  // color: #5d6696;
 }
 
 .group-infos a {
@@ -57,10 +60,10 @@ $time: 330ms;
 
 $btns: (
   beta: (
-    gstart: #A78BD5,
+    gstart: #7783C6,
     gend: #80CDC5,
     tstart: #80CDC5,
-    tend: #A78BD5
+    tend: #7783C6
   ),
 );
 
@@ -73,7 +76,7 @@ $btns: (
 }
 
 .btn {
-  font-family: 'Comfortaa';
+  font-family: 'Quicksand';
   font-weight: 900;
   padding: 1rem 1rem;
   font-size: 1rem;

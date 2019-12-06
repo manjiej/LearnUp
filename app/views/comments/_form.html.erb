@@ -1,4 +1,10 @@
 <%= simple_form_for [@group, @comment] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "add a comment", class: "btn btn-primary" %>
+  <h3 style="color: #A88BD5; font-weight: bold;"><%= f.input :content %></h3>
+  <div class="buttons-grp-form" style="display: flex; justify-content: center">
+    <div class="form-actions btn btn--beta new-grp-btn" style="text-align: center; padding: 0; margin-right: 5px;">
+      <span><%= f.button :submit, "Add your review"%></span>
+    </div>
+  </div>
 <% end %>
+
+

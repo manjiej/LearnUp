@@ -7,19 +7,17 @@
         <h4><%= @group.description %></h4>
       </div>
 
-      <p><i class="far fa-calendar-alt" style="padding-right: 5px;"></i><%= @group.timeline %></p>
+      <p><i class="far fa-calendar-alt" style="padding-right: 5px; color: #7153a0"></i><%= @group.timeline %></p>
 
-      <p><i class="fas fa-map-marker-alt" style="padding-right: 5px;"></i><%= @group.location %></p>
-      <p><i class="fas fa-user-friends" style="padding-right: 5px;"></i><%= @group.members.count %></p>
+      <p><i class="fas fa-map-marker-alt" style="padding-right: 5px; color: #7153a0"></i><%= @group.location %></p>
+      <p><i class="fas fa-user-friends" style="padding-right: 5px; color: #7153a0"></i><%= @group.members.count %></p>
 
-      <p><strong>Created by:</strong> <%= @group.user.name %></p>
-
-      <p><strong>Subject:</strong> <%= @group.subject.name %></p>
+      <p>Study group created by <%= @group.user.name %> on <strong><%= @group.subject.name %></strong></p>
      </div>
   </div>
 
   <div class="col-md-6 col-12">
-    <div class="map-container">
+    <div class="map-container" style="margin-bottom: 50px;">
 
       <div id='map' style='width: 700px; height: 100vh;;'></div>
 
@@ -47,20 +45,19 @@
   </div>
 </div>
 
+<div class="comments" style= "margin: 0 auto; width: 700px; padding-top: 50px; padding-bottom: 50px; background-color: #aedee2; border-radius: 15px 50px 30px">
+  <div class="comments-content" style="font-family: 'Quicksand'; width: 700px; margin: 0 auto; text-align: center; padding: 10px 15px 40px 15px;">
+    <%= render 'comments/form', comments: @comments %>
+  </div>
 
-<%= render 'comments/form', comments: @comments %>
-
-<div class="cards subjects-cards">
-  <% @group.comments.each do |comment| %>
-    <div class="card span-3 float-left">
-      <div class="card-body">
-        <p class="card-title"><%= comment.content %></p>
-        <div class="card-infos">
+  <div class="reviews-users" style="border-top: 1px solid #7783c6; width: 600px; margin: 0 auto; font-family: 'Quicksand'">
+    <p style="text-align: center; margin-top: 50px; font-size: 20px; color: #A88BD5; font-weight: bold;">Reviews by other members:</p>
+    <div class="comments-container" style= "text-align: center;">
+      <% @group.comments.each do |comment| %>
+        <div class="comment-body" style="padding: 5px;">
+          <em>"<%= comment.content %>"</em> - by <%= current_user.name %>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
-
-<%= link_to 'Edit', edit_group_path(@group) %>
-<%= link_to 'Back', subject_groups_path(@group) %>

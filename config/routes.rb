@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :subjects, only: [:index] do
     resources :groups, shallow: true, only: [:index, :show, :new, :create, :edit, :update] do
       resources :comments, shallow: true
+      #resources :group_members, shallow: true
     end
   end
 
