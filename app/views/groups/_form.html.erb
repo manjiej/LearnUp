@@ -1,27 +1,27 @@
 <div class="grp-container">
   <div class="grp-form">
 
-<%= simple_form_for [@subject, @group] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for [@subject, @group] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :timeline %>
-      <%= f.input :location %>
-    </div>
+        <div class="form-inputs">
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :timeline %>
+          <%= f.input :location %>
+        </div>
+      </div>
+
+      <div class="buttons-grp-form" style="display: flex">
+        <div class="form-actions btn btn--beta new-grp-btn" style="text-align: center; padding: 0; margin-right: 5px;">
+          <span><%= f.button :submit %></span>
+        </div>
+        <div class="form-actions btn btn--beta" style="text-align: center; margin: 0">
+          <span><%= link_to 'Back', subject_groups_path %></span>
+        </div>
+
+      </div>
+    <% end %>
   </div>
-
-  <div class="buttons-grp-form" style="display: flex">
-    <div class="form-actions btn btn--beta new-grp-btn" style="text-align: center; padding: 0; margin-right: 5px;">
-      <span><%= f.button :submit %></span>
-    </div>
-    <div class="form-actions btn btn--beta" style="text-align: center; margin: 0">
-      <span><%= link_to 'Back', subject_groups_path %></span>
-    </div>
-  </div>
-<% end %>
-</div>
-
 </div>

@@ -1,6 +1,12 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:show, :edit, :update, :destroy, :join]
   skip_before_action :authenticate_user!, only: [:index, :show]
+
+  def join
+    @group_member = GroupMember.create(group_id: @group_id, user_id: current_user.id)
+    @group.group_members << @group_member
+    # @group.members += 1
+  end
 
   # GET /groups
   # GET /groups.json
@@ -23,15 +29,14 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
-  # GET /groups/1/edit
-  def edit
-  end
 
   # POST /groups
   # POST /groups.json
   def create
     @group = Group.new(group_params)
     @user = current_user
+
+    # authorize @group
 
     @subject = Subject.find(params[:subject_id])
     @group.subject = @subject
@@ -51,6 +56,11 @@ class GroupsController < ApplicationController
     #     format.json { render json: @group.errors, status: :unprocessable_entity }
     #   end
     # end
+  end
+
+  # GET /groups/1/edit
+  def edit
+
   end
 
   # PATCH/PUT /groups/1
